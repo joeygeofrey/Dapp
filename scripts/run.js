@@ -9,11 +9,16 @@ const main = async () => {
   
     await waveContract.getTotalWaves();
   
-    const waveTxn = await waveContract.wave();
-    await waveTxn.wait();
+    const firstWaveTxn = await waveContract.wave();
+    await firstWaveTxn.wait();
   
     await waveContract.getTotalWaves();
-  };
+  
+    const secondWaveTxn = await waveContract.connect(randomPerson).wave();
+    await secondWaveTxn.wait();
+  
+    await waveContract.getTotalWaves();
+};
   
   const runMain = async () => {
     try {
@@ -23,6 +28,6 @@ const main = async () => {
       console.log(error);
       process.exit(1);
     }
-  };
+};
   
-  runMain();
+runMain();
