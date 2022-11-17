@@ -1,23 +1,23 @@
 const main = async () => {
     const [owner, randomPerson] = await hre.ethers.getSigners();
-    const waveContractFactory = await hre.ethers.getContractFactory("Dapp");
-    const waveContract = await waveContractFactory.deploy();
-    await waveContract.deployed();
+    const dappContractFactory = await hre.ethers.getContractFactory("Dapp");
+    const dappContract = await dappContractFactory.deploy();
+    await dappContract.deployed();
   
-    console.log("Contract deployed to:", waveContract.address);
+    console.log("Contract deployed to:", dappContract.address);
     console.log("Contract deployed by:", owner.address);
   
-    await waveContract.getTotalWaves();
+    await dappContract.getTotalDapps();
   
-    const firstWaveTxn = await waveContract.wave();
-    await firstWaveTxn.wait();
+    const firstDappTxn = await dappContract.dapp();
+    await firstDappTxn.wait();
   
-    await waveContract.getTotalWaves();
+    await dappContract.getTotalDapps();
   
-    const secondWaveTxn = await waveContract.connect(randomPerson).wave();
-    await secondWaveTxn.wait();
+    const secondDappTxn = await dappContract.connect(randomPerson).dapp();
+    await secondDappTxn.wait();
   
-    await waveContract.getTotalWaves();
+    await dappContract.getTotalDapps();
 };
   
   const runMain = async () => {
