@@ -13,7 +13,7 @@ contract Dapp {
 
     function dapp() public {
         totalDapps += 1;
-        console.log("%s has dapped!", msg.sender);
+        console.log("%s has dapped you!", msg.sender);
     }
 
     function getTotalDapps() public view returns (uint256) {
