@@ -8,7 +8,7 @@ contract Dapp {
     uint256 totalDapps;
 
     constructor() {
-        console.log("Yo yo, I am a contract and I am smart");
+        console.log("Yo yo, sup! The name's contract and I am kinda smart.. hehe");
     }
 
     function dapp() public {
