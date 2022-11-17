@@ -1,6 +1,6 @@
 const main = async () => {
     const [owner, randomPerson] = await hre.ethers.getSigners();
-    const waveContractFactory = await hre.ethers.getContractFactory("Dapps");
+    const waveContractFactory = await hre.ethers.getContractFactory("Dapp");
     const waveContract = await waveContractFactory.deploy();
     await waveContract.deployed();
   
